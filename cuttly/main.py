@@ -49,7 +49,13 @@ class CuttlyClient:
         self.headers = {"Content-Type": "application/json"}
 
     def fetch_data(self, params: dict):
-
+        """
+        this method sends a get request using the request class.
+        Args:
+            params: parameters required for the specified method
+        Return:
+            Response object
+        """
         try:
             params['key'] = self.api_key
             response = requests.get(self.base_url, headers=self.headers, params=params)
